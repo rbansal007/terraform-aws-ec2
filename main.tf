@@ -1,9 +1,9 @@
 terraform {
-  cloud {
-    hostname = "ec2-13-201-48-181.ap-south-1.compute.amazonaws.com"
+  backend "remote" {
+    hostname = "ramit-bansal.tf-support.hashicorpdemo.com"
     organization = "test21stDeC"
     workspaces {
-      name = "8thJan"
+      name = "terraform-aws-ec2-1"
     }
   }
  required_providers {
@@ -23,4 +23,10 @@ resource "random_string" "random" {
   length           = 16
   special          = true
   override_special = "/@£$"
+}
+
+resource "random_password" "password" {
+  length           = 16
+  special          = true
+  override_special = "!#$%&*()-_=+[]{}<>:?"
 }
