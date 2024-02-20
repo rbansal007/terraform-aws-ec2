@@ -1,9 +1,10 @@
 terraform {
-  backend "remote" {
-    hostname = "ramit-bansal.tf-support.hashicorpdemo.com"
-    organization = "test21stDeC"
+ cloud {
+    hostname = "ramit-fdo.tf-support.hashicorpdemo.com"
+    organization = "testDockerRuns"
+
     workspaces {
-      name = "terraform-aws-ec2-1"
+      name = "testWorkspace_20thFeb"
     }
   }
  required_providers {
@@ -20,13 +21,13 @@ provider "random" {
 
 
 resource "random_string" "random" {
-  length           = 16
+  length           = 25
   special          = true
   override_special = "/@£$"
 }
 
 resource "random_password" "password" {
-  length           = 16
+  length           = 25
   special          = true
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
