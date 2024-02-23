@@ -4,7 +4,7 @@ terraform {
     organization = "test21stDeC"
 
     workspaces {
-      name = "aws-cli"
+      name = "aws-cli-terraform"
     }
   }
 
