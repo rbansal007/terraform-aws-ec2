@@ -24,3 +24,8 @@ resource "random_string" "random" {
   special          = true
   override_special = "/@£$"
 }
+resource "random_password" "password" {
+  length           = 16
+  special          = true
+  override_special = "!#$%&*()-_=+[]{}<>:?"
+}
